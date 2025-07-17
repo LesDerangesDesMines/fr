@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vierge</title>
+    <title>Nous contacter</title>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
             background: url('image/ddm logo.jpg') no-repeat center center fixed;
             background-size: cover;
-            margin: 0;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
         }
 
         .container {
@@ -23,37 +29,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        input, textarea, button {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
         .home-button {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             background-color: #007BFF;
             color: white;
             padding: 10px 15px;
@@ -61,18 +37,60 @@
             border-radius: 5px;
             font-size: 14px;
             z-index: 1000;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
         }
 
         .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
             width: 100%;
             background-color: #003366;
-            padding: 20px 10px;
-            margin-top: 40px;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            box-sizing: border-box;
         }
 
         .footer-button {
             display: inline-block;
-            margin: 5px 10px;
             background: transparent;
             color: white;
             padding: 8px 12px;
@@ -87,6 +105,44 @@
             color: #003366;
         }
 
+        .nain-container {
+            position: fixed;
+            bottom: -90px;
+            right: 10px;
+            z-index: 999;
+            transition: bottom 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nain-container:hover {
+            bottom: 0;
+        }
+
+        #nain {
+            width: 150px;
+            height: auto;
+        }
+
+        .bulle {
+            position: absolute;
+            bottom: 100%;
+            right: 20px;
+            background: white;
+            color: black;
+            padding: 8px 12px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .nain-container:hover .bulle {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width: 600px) {
             .home-button {
                 font-size: 12px;
@@ -96,27 +152,30 @@
             .footer-button {
                 font-size: 12px;
                 padding: 6px 10px;
+                width: 80%;
+                text-align: center;
             }
 
-            input, textarea, button {
-                font-size: 14px;
+            #nain {
+                width: 100px;
             }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="home-button">Page d'accueil</a>
-
     <div class="container">
-        <h1>Vierge</h1>
-        <form action="https://formsubmit.co/PAA000@hotmail.fr" method="POST">
-            <input type="text" name="name" placeholder="Votre nom" required>
-            <input type="email" name="email" placeholder="Votre email" required>
-            <textarea name="message" placeholder="Votre message" required></textarea>
+        <a href="index.html" class="home-button">Page d'accueil</a>
+        <h1>Nous contacter</h1>
 
-            <input type="hidden" name="_next" value="https://ton-site.github.io/merci.html">
-            <input type="text" name="_honey" style="display:none">
-            <input type="hidden" name="_captcha" value="false">
+        <form action="mailto:votreadresse@example.com" method="post" enctype="text/plain">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="email">Adresse mail :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
             <button type="submit">Envoyer</button>
         </form>
@@ -125,7 +184,13 @@
     <div class="footer">
         <a href="1001.html" class="footer-button">Festival 1001 parties</a>
         <a href="qui.html" class="footer-button">Qui sommes-nous ?</a>
-		
+        <a href="Nos partenaires.html" class="footer-button">Nos partenaires</a>
+        <a href="Nos jeux.html" class="footer-button">Nos jeux</a>
+    </div>
+
+    <div class="nain-container">
+        <div class="bulle">Coucou toi ! 👋</div>
+        <img src="image/Nain.png" alt="Nain curieux" id="nain">
     </div>
 </body>
 </html>
