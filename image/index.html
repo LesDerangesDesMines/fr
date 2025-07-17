@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les DDM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: url('image/ddm logo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            width: 180px;
+            text-align: center;
+        }
+        .icon-button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 0 20px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #003366;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            box-sizing: border-box;
+		}
+			
+		.footer-button {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+	}
+	.footer-button:hover {
+            background: white;
+            color: #003366;
+        }
+
+        /* Nain fixe en bas à droite (caché à 60%) */
+        .nain-container {
+            position: fixed;
+            bottom: -90px;
+            right: 10px;
+            z-index: 999;
+            transition: bottom 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nain-container:hover {
+            bottom: 0;
+        }
+
+        #nain {
+            width: 150px;
+            height: auto;
+        }
+
+        .bulle {
+            position: absolute;
+            bottom: 100%;
+            right: 20px;
+            background: white;
+            color: black;
+            padding: 8px 12px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .nain-container:hover .bulle {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .home-button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
+            .footer-button {
+                font-size: 12px;
+                padding: 6px 10px;
+                width: 80%;
+                text-align: center;
+            }
+
+            #nain {
+                width: 100px;
+            }
+	}
+        }
+        a {
+            text-decoration: none;
+            font-size: 0;
+        }
+        .activity-buttons {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            justify-content: center;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .activity-buttons .button {
+            width: auto;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .jds { background-color: #ff5733; }
+        .tcg { background-color: #33cc33; }
+        .jdr { background-color: #33aaff; }
+        .murder { background-color: #aa33aa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur le site des Dés Rangés des Mines ! &#x1F3B2;</h1>
+        <p><strong>Suivez-nous sur les réseaux sociaux :</strong></p>
+
+        <div>
+            <a href="https://www.facebook.com/profile.php?id=61552778873826" target="_blank"><img src="image/Facebook_Logo_Primary.png" alt="Facebook" class="icon-button"></a>
+            <a href="https://discord.gg/a48WMquq" target="_blank"><img src="image/icon_clyde_blurple_RGB.svg" alt="Discord" class="icon-button"></a>
+            <a href="https://www.instagram.com/lesdesrangesdesmines/" target="_blank"><img src="image/Instagram_Glyph_Gradient.svg" alt="Instagram" class="icon-button"></a>
+        </div>
+
+        <a href="https://docs.google.com/spreadsheets/d/1PVQ5JmdQfWuMJNolIHqyc41C-4R5fqaL1SJTCG3ricY/edit?pli=1&gid=599125287#gid=599125287" class="button" target="_blank">Nos dates</a>
+        
+        <h2>Nos activités</h2>
+        <div class="activity-buttons">
+            <a href="jeux de société.html" class="button jds">Jeux de société</a>
+            <a href="Jeux de role.html" class="button jdr">Jeux de role</a>
+            <a href="tcg.html" class="button tcg">Cartes à jouer</a>
+            <a href="Murder party.html" class="button murder">Murder Party</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="1001.html" class="footer-button">Festival 1001 parties</a>
+        <a href="qui.html" class="footer-button">Qui sommes-nous ?</a>
+        <a href="qui.html" class="footer-button">Nos partenaires</a>
+        <a href="Nos jeux.html" class="footer-button">Nos jeux</a>
+    </div>
+
+    <!-- Nain fixe avec bulle -->
+    <div class="nain-container">
+        <div class="bulle">Coucou toi ! 👋</div>
+        <img src="image/Nain.png" alt="Nain curieux" id="nain">
+    </div>
+	
+</body>
+</html>
+t
