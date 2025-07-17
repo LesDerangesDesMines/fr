@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1001 parties</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('image/ddm logo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 1000;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #003366;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            box-sizing: border-box;
+        }
+
+        .footer-button {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .footer-button:hover {
+            background: white;
+            color: #003366;
+        }
+
+        /* Nain fixe en bas à droite (caché à 60%) */
+        .nain-container {
+            position: fixed;
+            bottom: -90px;
+            right: 10px;
+            z-index: 999;
+            transition: bottom 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nain-container:hover {
+            bottom: 0;
+        }
+
+        #nain {
+            width: 150px;
+            height: auto;
+        }
+
+        .bulle {
+            position: absolute;
+            bottom: 100%;
+            right: 20px;
+            background: white;
+            color: black;
+            padding: 8px 12px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .nain-container:hover .bulle {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .home-button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
+            .footer-button {
+                font-size: 12px;
+                padding: 6px 10px;
+                width: 80%;
+                text-align: center;
+            }
+
+            #nain {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-button">Page d'accueil</a>
+        <h1>1001 parties</h1>
+		<p style="text-align: justify; font-size: 16px; line-height: 1.6;">
+            Les 9 et 10 novembre 2024, l’association <strong>Les Dés Rangés des Mines</strong> a organisé la première édition du festival <strong>« Les 1001 parties »</strong> à la salle EVA de Blanzy (71). Ce rendez-vous ludique, gratuit et ouvert à tous, a rassemblé plusieurs centaines de passionnés, curieux et familles autour d’un objectif : faire découvrir la richesse et la diversité des jeux de société.<br><br>
+            Pendant deux jours, petits et grands ont pu s’initier à une grande variété de jeux : jeux de plateau modernes, cartes à collectionner (Magic, Pokémon…), jeux de rôle et d’ambiance, figurines, wargames, Loup Garous, quiz et murder parties. <br><br>
+            Le tout encadré par des <strong>bénévoles passionnés</strong>, prêts à expliquer les règles et à accompagner chaque table de jeu. Le festival a également mis en lumière la <strong>création ludique</strong> grâce à une tombola de prototypes et de jeux conçus par des auteurs indépendants.<br><br>
+            Cette première édition a été un véritable <strong>succès populaire</strong>, posant les bases d’un événement convivial et accessible, au service du lien social et de la découverte intergénérationnelle.
+        </p>
+		<div class="image-gallery" style="margin-top: 20px;">
+    <div style="background: rgba(255, 255, 255, 0.4); padding: 10px; border-radius: 10px;">
+        <img src="image/1001 (1).jpg" alt="Photo 1" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (2).jpg" alt="Photo 2" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (3).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (4).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+		<img src="image/1001 (5).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (6).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (7).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (8).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (9).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (10).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (11).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (12).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (13).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (14).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+        <img src="image/1001 (15).jpg" alt="Photo 3" style="width: 100%; margin-bottom: 15px; border-radius: 10px;">
+
+    </div>
+      <div class="footer">
+        <a href="1001.html" class="footer-button">Festival 1001 parties</a>
+        <a href="qui.html" class="footer-button">Qui sommes-nous ?</a>
+        <a href="qui.html" class="footer-button">Nos partenaires</a>
+        <a href="Nos jeux.html" class="footer-button">Nos jeux</a>
+    </div>
+
+    <!-- Nain fixe avec bulle -->
+    <div class="nain-container">
+        <div class="bulle">Coucou toi ! 👋</div>
+        <img src="image/Nain.png" alt="Nain curieux" id="nain">
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIERGE</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('image/ddm logo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 1000;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #003366;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            box-sizing: border-box;
+        }
+
+        .footer-button {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .footer-button:hover {
+            background: white;
+            color: #003366;
+        }
+
+        /* Nain fixe en bas à droite (caché à 60%) */
+        .nain-container {
+            position: fixed;
+            bottom: -90px;
+            right: 10px;
+            z-index: 999;
+            transition: bottom 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nain-container:hover {
+            bottom: 0;
+        }
+
+        #nain {
+            width: 150px;
+            height: auto;
+        }
+
+        .bulle {
+            position: absolute;
+            bottom: 100%;
+            right: 20px;
+            background: white;
+            color: black;
+            padding: 8px 12px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .nain-container:hover .bulle {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .home-button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+
+            .footer-button {
+                font-size: 12px;
+                padding: 6px 10px;
+                width: 80%;
+                text-align: center;
+            }
+
+            #nain {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-button">Page d'accueil</a>
+        <h1>Qui sommes-nous ?</h1>
+		<section>
+  <p>
+    Nous sommes une association de jeux de société basée à <strong>Blanzy</strong>, en <strong>Saône-et-Loire (71)</strong>.
+  </p>
+  <p>
+    Notre objectif est de partager notre passion du jeu sous toutes ses formes, avec le plus grand nombre, et de créer des moments conviviaux autour du plaisir de jouer.
+  </p>
+  <p>
+    Chaque semaine, nous organisons des soirées jeux, participons à de nombreuses animations dans les villes voisines et, chaque mois de novembre, nous avons le plaisir d’organiser notre propre festival de jeux de société : <strong>« Les 1001 parties »</strong>.
+  </p>
+  <p>
+    Notre association regroupe une grande variété de pratiques ludiques : <em>jeux de plateau</em>, <em>jeux de rôle</em>, <em>jeux de figurines</em>, <em>jeux de cartes</em> (comme Magic, Lorcana, Pokémon, etc), pour tous les âges et tous les goûts.
+  </p>
+  <p>
+    Rejoignez-nous pour découvrir, partager et surtout... <strong>jouer !</strong>
+  </p>
+</section>
+
+    </div>
+
+    <div class="footer">
+        <a href="1001.html" class="footer-button">Festival 1001 parties</a>
+        <a href="qui.html" class="footer-button">Qui sommes-nous ?</a>
+        <a href="qui.html" class="footer-button">Nos partenaires</a>
+        <a href="Nos jeux.html" class="footer-button">Nos jeux</a>
+    </div>
+
+    <!-- Nain fixe avec bulle -->
+    <div class="nain-container">
+        <div class="bulle">Coucou toi ! 👋</div>
+        <img src="image/Nain.png" alt="Nain curieux" id="nain">
+    </div>
+</body>
+</html>
